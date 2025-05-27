@@ -1,0 +1,99 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  max-width: 720px;
+  margin: 20px auto;
+  padding: 0 10px;
+  background-color: #fff8f0;
+  color: #5c4a30;
+}
+
+.main-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.options label {
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #d3b27c;
+  border-radius: 8px;
+  padding: 10px;
+  width: 120px;
+  transition: background-color 0.3s ease;
+}
+
+.options label:hover {
+  background-color: #f4e4c3;
+}
+
+.options input[type="radio"] {
+  display: none;
+}
+
+.options img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.options span {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #6a4f3d;
+}
+
+button {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 24px;
+  background-color: #b88a58;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d3b27c;
+}
+
+.recipe-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+}
+
+article.recipe {
+  margin-bottom: 50px;
+}
+
+section.korean, section.english {
+  background-color: #f9f2e7;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+ol {
+  padding-left: 20px;
+}

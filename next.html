@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>치킨 레시피</title>
+<link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+<h1 class="main-title">치킨 레시피</h1>
+
+<div id="recipe-container"></div>
+
+<script>
+// URL에서 쿼리값 읽기
+const params = new URLSearchParams(window.location.search);
+const ingredient = params.get('ingredient');
+
+const recipes = {
+  lettuce: {
+    title: "케이준 치킨샐러드",
+    img: "images/cajun_chicken_salad.jpg",
+    korean: {
+      topic: "남은 닭가슴살을 활용한 신선한 야채와 케이준 치킨샐러드",
+      ingredients: "닭가슴살 1.5개, 양상추, 파프리카, 적채, 꽃상추, 계란 1개, 소주 1큰술, 소금, 후추, 허니머스터드, 마요네즈, 올리고당",
+      instructions: [
+        "닭가슴살을 소주, 소금, 후추로 10분간 재운다.",
+        "야채를 깨끗이 씻고 먹기 좋은 크기로 준비한다.",
+        "계란을 삶아 썬다.",
+        "허니머스터드, 마요네즈, 올리고당을 1:1:1 비율로 섞어 소스를 만든다.",
+        "닭가슴살에 밀가루, 계란물, 빵가루 순으로 옷을 입혀 튀긴다.",
+        "튀긴 닭가슴살을 야채 위에 올리고 소스를 뿌려 마무리한다."
+      ],
+      reference: "http://marianne40.blog.me"
+    },
+    english: {
+      topic: "Cajun chicken salad made with leftover chicken breast and fresh veggies.",
+      ingredients: "1.5 chicken breasts, lettuce, bell pepper, red cabbage, flower lettuce, 1 egg, 1 tbsp soju, salt, pepper, honey mustard, mayonnaise, oligosaccharide syrup.",
+      instructions: [
+        "Marinate chicken breast with soju, salt, and pepper for 10 minutes.",
+        "Wash and prepare vegetables in bite-sized pieces.",
+        "Boil and slice 1 egg.",
+        "Mix honey mustard, mayonnaise, and oligosaccharide syrup in equal parts to make dressing.",
+        "Coat chicken in flour, egg wash, and bread crumbs; then fry.",
+        "Place fried chicken on vegetables and drizzle dressing on top."
+      ],
+      reference: "http://marianne40.blog.me"
+    }
+  },
+
+  tortilla: {
+    title: "치킨 퀘사디아",
+    img: "images/chicken_quesadilla.jpg",
+    korean: {
+      topic: "남은 닭가슴살과 야채를 활용한 맛있는 치킨 퀘사디아",
+      ingredients: "또띠아 2장, 닭가슴살 1개, 양파 1/2개, 피망 1/2개, 버섯 약간, 토마토소스 2큰술, 모짜렐라치즈, 소금, 후추, 올리브유, 굴소스, 우스터소스",
+      instructions: [
+        "닭가슴살을 얇게 저며 소금, 후추, 올리브유로 마리네이드한다.",
+        "팬에 닭가슴살을 노릇하게 굽고 찢는다.",
+        "야채를 채썰고 볶는다.",
+        "닭가슴살과 야채에 굴소스와 우스터소스를 넣고 볶는다.",
+        "또띠아를 굽고 토마토소스를 바른다.",
+        "치킨과 치즈를 올리고 반으로 접어 약불에서 굽는다."
+      ],
+      reference: "https://www.10000recipe.com/recipe/6712351"
+    },
+    english: {
+      topic: "Chicken quesadilla using leftover chicken breast and vegetables.",
+      ingredients: "2 tortillas, 1 chicken breast, 1/2 onion, 1/2 bell pepper, mushrooms, 2 tbsp tomato sauce, mozzarella cheese, salt, pepper, olive oil, oyster sauce, Worcestershire sauce.",
+      instructions: [
+        "Marinate chicken with salt, pepper, and olive oil.",
+        "Cook chicken until golden and shred it.",
+        "Slice and stir-fry vegetables.",
+        "Add sauces and chicken to vegetables and mix.",
+        "Grill tortillas and spread tomato sauce.",
+        "Add chicken and cheese, fold and grill until crispy."
+      ],
+      reference: "https://www.10000recipe.com/recipe/6712351"
+    }
+  },
+
+  soup: {
+    title: "치킨 수프 (치킨 누들 수프)",
+    img: "images/chicken_soup.jpg",
+    korean: {
+      topic: "남은 닭가슴살과 채소를 활용해 몸과 마음을 따뜻하게 하는 영양 치킨 수프",
+      ingredients: "닭가슴살 260g, 샐러리 3줄기, 당근, 표고버섯 2개, 양파 1개, 마늘 6~7쪽, 소금, 후추, 치킨스톡, 월계수잎, 레몬 1/2개, 펜네 100g, 화이트 와인",
+      instructions: [
+        "닭가슴살을 마리네이드한다.",
+        "채소를 썰어 준비한다.",
+        "펜네를 삶는다.",
+        "올리브유에 채소를 볶는다.",
+        "닭가슴살 넣고 살짝 익힌다.",
+        "물, 치킨스톡, 월계수잎, 와인 넣고 끓인다.",
+        "거품 제거 후 당근 익을 때까지 끓인다.",
+        "펜네 넣고 끓인 후 레몬즙과 후추, 파슬리 뿌려 마무리."
+      ],
+      reference: "https://blog.naver.com/sye12345"
+    },
+    english: {
+      topic: "Nutritious chicken noodle soup using leftover chicken and vegetables.",
+      ingredients: "260g chicken breast, 3 stalks celery, carrots, 2 shiitake mushrooms, 1 onion, garlic cloves, salt, pepper, chicken stock, bay leaves, 1/2 lemon, 100g penne pasta, white wine.",
+      instructions: [
+        "Marinate chicken breast.",
+        "Prepare vegetables.",
+        "Cook penne pasta.",
+        "Sauté vegetables in olive oil.",
+        "Add chicken and cook lightly.",
+        "Add water, stock, bay leaves, and wine; boil.",
+        "Skim foam; simmer until carrots are soft.",
+        "Add pasta; finish with lemon juice, pepper, and parsley."
+      ],
+      reference: "https://blog.naver.com/sye12345"
+    }
+  },
+
+  batter: {
+    title: "백종원 닭튀김",
+    img: "images/baekfried_chicken.jpg",
+    korean: {
+      topic: "남은 닭을 우유에 재워 비린내 제거 후 바삭한 튀김옷을 입힌 집에서 즐기는 고급진 닭튀김",
+      ingredients: "닭 1마리, 튀김가루, 식용유 600ml, 우유 200ml, 맛소금, 후춧가루",
+      instructions: [
+        "닭을 손질 후 맛소금과 후춧가루 뿌린다.",
+        "우유에 30분 재운다.",
+        "튀김가루를 골고루 묻힌다.",
+        "기름을 예열한 후 닭을 튀긴다.",
+        "7분 30초간 튀기고 필요시 한 번 더 튀긴다.",
+        "기름을 빼고 완성."
+      ],
+      reference: "http://blog.naver.com/ranyzz"
+    },
+    english: {
+      topic: "Premium fried chicken by soaking leftover chicken in milk and coating with batter.",
+      ingredients: "1 whole chicken, fried batter mix, 600ml cooking oil, 200ml milk, seasoned salt, black pepper.",
+      instructions: [
+        "Prepare chicken and season with salt and pepper.",
+        "Soak chicken in milk for 30 minutes.",
+        "Coat chicken in batter.",
+        "Heat oil and fry chicken.",
+        "Fry for 7.5 minutes and fry again if needed.",
+        "Drain oil and serve."
+      ],
+      reference: "http://blog.naver.com/ranyzz"
+    }
+  },
+
+  rice: {
+    title: "치킨 솥밥",
+    img: "images/chicken_hotpot_rice.jpg",
+    korean: {
+      topic: "남은 치킨으로 고소하고 풍미 가득한 솥밥 만드는 방법",
+      ingredients: "불린 쌀, 남은 치킨, 참기름, 다진 마늘, 양파, 대파, 당근, 간장, 맛술, 물, 김가루, 깨, 쪽파",
+      instructions: [
+        "냄비에 참기름과 다진 마늘, 양파, 대파, 당근을 볶는다.",
+        "불린 쌀을 넣고 볶는다.",
+        "간장, 맛술, 물을 넣는다.",
+        "남은 치킨을 올리고 뚜껑을 덮는다.",
+        "중불에서 5분, 약불에서 10분, 불을 끄고 10분 뜸 들인다.",
+        "뚜껑을 열고 잘 섞은 후 김가루, 깨, 쪽파를 뿌린다."
+      ],
+      reference: "https://example.com/chicken_hotpot_rice"
+    },
+    english: {
+      topic: "Savory hot pot rice made with leftover chicken.",
+      ingredients: "Soaked rice, leftover chicken, sesame oil, minced garlic, onion, green onion, carrot, soy sauce, cooking wine, water, seaweed flakes, sesame seeds, chopped green onions.",
+      instructions: [
+        "Sauté garlic, onion, green onion, and carrot in sesame oil.",
+        "Add soaked rice and stir-fry.",
+        "Add soy sauce, cooking wine, and water.",
+        "Place leftover chicken on top and cover.",
+        "Cook on medium heat 5 minutes, low heat 10 minutes, then steam 10 minutes.",
+        "Mix well, garnish with seaweed, sesame seeds, and green onion."
+      ],
+      reference: "https://example.com/chicken_hotpot_rice"
+    }
+  }
+};
+
+const container = document.getElementById("recipe-container");
+
+if (!ingredient || !recipes[ingredient]) {
+  container.innerHTML = "<p>잘못된 접근입니다. 재료를 다시 선택해주세요.</p>";
+} else {
+  const r = recipes[ingredient];
+
+  container.innerHTML = `
+    <h2>${r.title}</h2>
+    <img src="${r.img}" alt="${r.title}" class="recipe-img" />
+    <section class="korean">
+      <h3>한국어</h3>
+      <p><strong>주제:</strong> ${r.korean.topic}</p>
+      <p><strong>재료:</strong> ${r.korean.ingredients}</p>
+      <p><strong>레시피 설명:</strong></p>
+      <ol>${r.korean.instructions.map(i => `<li>${i}</li>`).join('')}</ol>
+      <p><a href="${r.korean.reference}" target="_blank" rel="noopener noreferrer">Reference</a></p>
+    </section>
+    <section class="english">
+      <h3>English</h3>
+      <p><strong>Topic:</strong> ${r.english.topic}</p>
+      <p><strong>Ingredients:</strong> ${r.english.ingredients}</p>
+      <p><strong>Recipe Instructions:</strong></p>
+      <ol>${r.english.instructions.map(i => `<li>${i}</li>`).join('')}</ol>
+      <p><a href="${r.english.reference}" target="_blank" rel="noopener noreferrer">Reference</a></p>
+    </section>
+  `;
+}
+</script>
+
+</body>
+</html>

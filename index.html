@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>치킨 사이트 - 재료 선택</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>치킨 사이트: 재료를 선택하세요</h1>
+  <div class="choices">
+    <button class="choice-btn" data-value="lettuce">
+      <img src="lettuce.jpg" alt="양상추" />
+      <div>양상추</div>
+    </button>
+    <button class="choice-btn" data-value="tortilla">
+      <img src="tortilla.jpg" alt="또띠아" />
+      <div>또띠아</div>
+    </button>
+    <button class="choice-btn" data-value="soup">
+      <img src="soup.jpg" alt="수프" />
+      <div>수프</div>
+    </button>
+    <button class="choice-btn" data-value="breading_powder">
+      <img src="breading_powder.jpg" alt="튀김가루" />
+      <div>튀김가루</div>
+    </button>
+    <button class="choice-btn" data-value="rice">
+      <img src="rice.jpg" alt="밥" />
+      <div>밥</div>
+    </button>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.choice-btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selected = button.getAttribute('data-value');
+        localStorage.setItem('selectedIngredient', selected);
+        window.location.href = 'next.html';
+      });
+    });
+  </script>
+</body>
+</html>
