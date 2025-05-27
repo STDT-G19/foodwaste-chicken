@@ -2,44 +2,56 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>치킨 사이트 - 재료 선택</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FOODWASTE - 치킨</title>
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-  <h1>치킨 사이트: 재료를 선택하세요</h1>
-  <div class="choices">
-    <button class="choice-btn" data-value="lettuce">
-      <img src="lettuce.jpg" alt="양상추" />
-      <div>양상추</div>
-    </button>
-    <button class="choice-btn" data-value="tortilla">
-      <img src="tortilla.jpg" alt="또띠아" />
-      <div>또띠아</div>
-    </button>
-    <button class="choice-btn" data-value="soup">
-      <img src="soup.jpg" alt="수프" />
-      <div>수프</div>
-    </button>
-    <button class="choice-btn" data-value="breading_powder">
-      <img src="breading_powder.jpg" alt="튀김가루" />
-      <div>튀김가루</div>
-    </button>
-    <button class="choice-btn" data-value="rice">
-      <img src="rice.jpg" alt="밥" />
-      <div>밥</div>
-    </button>
+  <h1>FOODWASTE - 치킨</h1>
+  <p class="subtitle">냉장고 속 남은 재료를 골라 새로운 치킨 요리로 바꿔보세요! (하나만 선택)</p>
+
+  <div class="ingredient-container">
+    <div class="ingredient" data-name="lettuce" onclick="selectIngredient(this)">
+      <img src="food_picture/lettuce.jpg" alt="양상추">
+      <span>양상추</span>
+    </div>
+    <div class="ingredient" data-name="tortilla" onclick="selectIngredient(this)">
+      <img src="food_picture/tortilla.jpg" alt="또띠아">
+      <span>또띠아</span>
+    </div>
+    <div class="ingredient" data-name="soup" onclick="selectIngredient(this)">
+      <img src="food_picture/soup.jpg" alt="수프">
+      <span>수프</span>
+    </div>
+    <div class="ingredient" data-name="batter" onclick="selectIngredient(this)">
+      <img src="food_picture/batter.jpg" alt="튀김가루">
+      <span>튀김가루</span>
+    </div>
+    <div class="ingredient" data-name="rice" onclick="selectIngredient(this)">
+      <img src="food_picture/rice.jpg" alt="밥">
+      <span>밥</span>
+    </div>
   </div>
 
+  <button class="next-btn" onclick="goToNextPage()">다음으로</button>
+
+  <footer>한양대 인터칼리지학과 G19</footer>
+
   <script>
-    const buttons = document.querySelectorAll('.choice-btn');
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const selected = button.getAttribute('data-value');
-        localStorage.setItem('selectedIngredient', selected);
-        window.location.href = 'next.html';
-      });
-    });
+    let selectedIngredient = "";
+
+    function selectIngredient(el) {
+      document.querySelectorAll('.ingredient').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedIngredient = el.dataset.name;
+      document.querySelector('.next-btn').classList.add('active');
+    }
+
+    function goToNextPage() {
+      if (!selectedIngredient) return;
+      localStorage.setItem('selectedIngredient', selectedIngredient);
+      window.location.href = 'next_chicken.html';
+    }
   </script>
 </body>
 </html>
