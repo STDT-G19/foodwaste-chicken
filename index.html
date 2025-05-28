@@ -3,91 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FOODWASTE - Chicken</title>
+  <title>FOODWASTE - 치킨</title>
   <link href="style.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-    .subtitle {
-      margin-bottom: 20px;
-    }
-    .ingredient-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .ingredient {
-      width: 150px;
-      cursor: pointer;
-      border: 2px solid transparent;
-      border-radius: 10px;
-      padding: 10px;
-      transition: border 0.3s;
-    }
-    .ingredient.selected {
-      border: 2px solid #f39c12;
-    }
-    .ingredient img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .next-btn {
-      margin-top: 30px;
-      padding: 10px 30px;
-      font-size: 16px;
-      background-color: #ccc;
-      border: none;
-      border-radius: 5px;
-      cursor: not-allowed;
-      transition: background-color 0.3s;
-    }
-    .next-btn.active {
-      background-color: #f39c12;
-      color: white;
-      cursor: pointer;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 12px;
-      color: #666;
-    }
-  </style>
 </head>
 <body>
-  <h1>FOODWASTE - Chicken</h1>
-  <p class="subtitle">Pick one leftover ingredient and create a new chicken dish!</p>
+  <h1>FOODWASTE - 치킨</h1>
+  <p class="subtitle">남은 재료를 골라 새로운 치킨 요리로 바꿔보세요! (하나만 선택)</p>
 
   <div class="ingredient-container">
     <div class="ingredient" data-name="lettuce" onclick="selectIngredient(this)">
-      <img src="food_picture/lettuce.jpg" alt="Lettuce">
+      <img src="food_picture/lettuce.jpg" alt="양상추">
       <span>양상추</span>
     </div>
     <div class="ingredient" data-name="tortilla" onclick="selectIngredient(this)">
-      <img src="food_picture/tortilla.jpg" alt="Tortilla">
+      <img src="food_picture/tortilla.jpg" alt="또띠아">
       <span>또띠아</span>
     </div>
     <div class="ingredient" data-name="soup" onclick="selectIngredient(this)">
-      <img src="food_picture/soup.jpg" alt="Soup">
+      <img src="food_picture/soup.jpg" alt="수프">
       <span>수프</span>
     </div>
     <div class="ingredient" data-name="frymix" onclick="selectIngredient(this)">
-      <img src="food_picture/frymix.jpg" alt="Fry Mix">
+      <img src="food_picture/frymix.jpg" alt="튀김가루">
       <span>튀김가루</span>
     </div>
     <div class="ingredient" data-name="rice" onclick="selectIngredient(this)">
-      <img src="food_picture/rice.jpg" alt="Rice">
+      <img src="food_picture/rice.jpg" alt="밥">
       <span>밥</span>
     </div>
   </div>
 
-  <button class="next-btn" onclick="goToNextPage()">Next</button>
+  <button class="next-btn" onclick="goToNextPage()">다음으로</button>
 
-  <footer>Hanyang University Intercollege G19</footer>
+  <footer>한양대 인터칼리지학과 G19</footer>
 
   <script>
     let selectedIngredient = "";
