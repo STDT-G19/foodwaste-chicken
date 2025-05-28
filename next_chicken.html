@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chicken Recipe</title>
+  <title>FOODWASTE - 치킨 레시피</title>
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
@@ -18,112 +18,100 @@
 
   <script>
     const recipes = {
-      "lettuce": {
-        name: "치킨 샐러드",
-        image: "food_picture/lettuce.jpg",
-        topic_kr: "남은 치킨과 양상추로 만든 신선한 샐러드",
-        ingredients_kr: "남은 치킨, 양상추, 방울토마토, 드레싱",
+      "양상추": {
+        name: "케이준 치킨 샐러드",
+        image: "food_picture/lettuce_result.jpg",
+        topic_kr: "남은 치킨과 신선한 야채로 만든 상큼한 샐러드",
+        ingredients_kr: "남은 치킨, 양상추, 파프리카, 적채, 허니머스터드, 마요네즈, 올리고당",
         steps_kr: [
-          "1. 양상추와 토마토를 씻어 준비한다.",
-          "2. 남은 치킨을 잘게 찢는다.",
-          "3. 모든 재료를 볼에 담고 드레싱을 뿌린다.",
-          "4. 잘 섞어 접시에 담아낸다."
+          "1. 치킨을 적당히 잘라 준비한다.",
+          "2. 양상추, 파프리카, 적채를 씻어 먹기 좋게 자른다.",
+          "3. 소스를 1:1:1 비율로 섞는다.",
+          "4. 야채 위에 치킨을 올리고 소스를 뿌린다."
         ],
-        topic_en: "Fresh chicken salad with leftover chicken and lettuce",
-        ingredients_en: "Leftover chicken, lettuce, cherry tomatoes, dressing",
+        topic_en: "Refreshing Cajun Chicken Salad with Leftover Chicken",
+        ingredients_en: "Leftover chicken, lettuce, bell pepper, red cabbage, honey mustard, mayonnaise, oligosaccharide",
         steps_en: [
-          "1. Wash lettuce and tomatoes.",
-          "2. Shred leftover chicken.",
-          "3. Combine everything in a bowl and drizzle with dressing.",
-          "4. Toss well and serve."
+          "1. Cut the leftover chicken into bite-sized pieces.",
+          "2. Wash and chop lettuce, bell pepper, and red cabbage.",
+          "3. Mix the sauce in a 1:1:1 ratio.",
+          "4. Top the salad with chicken and drizzle the sauce."
         ],
-        reference: "Homemade recipe"
+        reference: "https://www.10000recipe.com/recipe/6712351"
       },
-      "tortilla": {
-        name: "치킨 또띠아 롤",
-        image: "food_picture/tortilla.jpg",
-        topic_kr: "남은 치킨으로 만든 간단한 또띠아 롤",
-        ingredients_kr: "남은 치킨, 또띠아, 양상추, 치즈, 소스",
+      "또띠아": {
+        name: "치킨 퀘사디아",
+        image: "food_picture/tortilla_result.jpg",
+        topic_kr: "남은 치킨과 또띠아로 만든 멕시칸 스타일 퀘사디아",
+        ingredients_kr: "또띠아, 치킨, 치즈, 양파, 피망, 토마토소스",
         steps_kr: [
-          "1. 또띠아에 소스를 바른다.",
-          "2. 치킨, 양상추, 치즈를 올린다.",
-          "3. 또띠아를 말아준다.",
-          "4. 반으로 잘라 접시에 담는다."
+          "1. 치킨을 잘게 찢어 준비한다.",
+          "2. 또띠아에 치킨, 치즈, 양파, 피망, 소스를 얹는다.",
+          "3. 반으로 접어 팬에 구워 치즈가 녹을 때까지 굽는다."
         ],
-        topic_en: "Quick chicken tortilla roll using leftovers",
-        ingredients_en: "Leftover chicken, tortilla, lettuce, cheese, sauce",
+        topic_en: "Mexican-Style Chicken Quesadilla with Leftovers",
+        ingredients_en: "Tortilla, chicken, cheese, onion, bell pepper, tomato sauce",
         steps_en: [
-          "1. Spread sauce on the tortilla.",
-          "2. Add chicken, lettuce, and cheese.",
-          "3. Roll up the tortilla.",
-          "4. Slice in half and serve."
+          "1. Shred the chicken into small pieces.",
+          "2. Layer chicken, cheese, onion, bell pepper, and sauce on tortilla.",
+          "3. Fold and grill until the cheese melts."
         ],
-        reference: "Homemade recipe"
+        reference: "https://www.10000recipe.com/recipe/6867197"
       },
-      "soup": {
-        name: "치킨 크림수프",
-        image: "food_picture/soup.jpg",
-        topic_kr: "남은 치킨으로 만든 부드러운 크림수프",
-        ingredients_kr: "남은 치킨, 양파, 감자, 우유, 크림, 버터",
+      "수프": {
+        name: "치킨 누들 수프",
+        image: "food_picture/soup_result.jpg",
+        topic_kr: "남은 치킨으로 만드는 따뜻한 치킨 누들 수프",
+        ingredients_kr: "치킨, 당근, 양파, 샐러리, 국수, 치킨스톡",
         steps_kr: [
-          "1. 양파와 감자를 볶는다.",
-          "2. 물과 치킨을 넣어 끓인다.",
-          "3. 우유와 크림을 넣고 부드럽게 끓인다.",
-          "4. 소금, 후추로 간을 맞춘다."
+          "1. 채소를 자르고 치킨은 찢어 준비한다.",
+          "2. 냄비에 채소를 볶고 물과 치킨스톡을 넣는다.",
+          "3. 국수를 넣고 끓이다 치킨을 넣고 마무리한다."
         ],
-        topic_en: "Creamy chicken soup with leftover chicken",
-        ingredients_en: "Leftover chicken, onion, potato, milk, cream, butter",
+        topic_en: "Warm Chicken Noodle Soup Using Leftover Chicken",
+        ingredients_en: "Chicken, carrot, onion, celery, noodles, chicken stock",
         steps_en: [
-          "1. Sauté onion and potato.",
-          "2. Add water and chicken, bring to a boil.",
-          "3. Stir in milk and cream, simmer gently.",
-          "4. Season with salt and pepper."
+          "1. Chop the vegetables and shred the chicken.",
+          "2. Sauté vegetables, add water and chicken stock.",
+          "3. Add noodles and simmer, then add chicken to finish."
         ],
-        reference: "Homemade recipe"
+        reference: "https://www.10000recipe.com/recipe/6889620"
       },
-      "frymix": {
-        name: "치킨 너겟",
-        image: "food_picture/frymix.jpg",
-        topic_kr: "튀김가루로 만든 바삭한 치킨 너겟",
-        ingredients_kr: "남은 치킨, 튀김가루, 달걀, 빵가루, 기름",
+      "튀김가루": {
+        name: "치킨 튀김",
+        image: "food_picture/frymix_result.jpg",
+        topic_kr: "남은 치킨을 재활용한 바삭한 치킨 튀김",
+        ingredients_kr: "치킨, 튀김가루, 계란, 빵가루, 기름",
         steps_kr: [
-          "1. 치킨을 한입 크기로 자른다.",
-          "2. 달걀물, 튀김가루, 빵가루 순으로 묻힌다.",
-          "3. 기름에 바삭하게 튀긴다.",
-          "4. 소스와 함께 낸다."
+          "1. 치킨에 튀김가루, 계란, 빵가루 순서로 묻힌다.",
+          "2. 기름에 튀겨 바삭하게 만든다."
         ],
-        topic_en: "Crispy chicken nuggets made with fry mix",
-        ingredients_en: "Leftover chicken, fry mix, egg, breadcrumbs, oil",
+        topic_en: "Crispy Fried Chicken with Leftover Pieces",
+        ingredients_en: "Chicken, fry mix, egg, breadcrumbs, oil",
         steps_en: [
-          "1. Cut chicken into bite-sized pieces.",
-          "2. Coat with egg, fry mix, and breadcrumbs.",
-          "3. Deep fry until golden and crispy.",
-          "4. Serve with dipping sauce."
+          "1. Coat chicken with fry mix, egg, and breadcrumbs.",
+          "2. Deep-fry until crispy."
         ],
-        reference: "Homemade recipe"
+        reference: "https://www.10000recipe.com/recipe/6800979"
       },
-      "rice": {
+      "밥": {
         name: "치킨 솥밥",
-        image: "food_picture/rice.jpg",
-        topic_kr: "남은 치킨으로 만든 맛있는 솥밥",
-        ingredients_kr: "남은 치킨, 쌀, 간장, 맛술, 당근, 양파, 대파",
+        image: "food_picture/rice_result.jpg",
+        topic_kr: "남은 치킨으로 만든 고소한 솥밥",
+        ingredients_kr: "치킨, 불린 쌀, 간장, 맛술, 채소, 물",
         steps_kr: [
-          "1. 쌀을 씻어 물에 불린다.",
-          "2. 냄비에 채소를 볶는다.",
-          "3. 쌀과 양념, 물을 넣고 끓인다.",
-          "4. 치킨을 올리고 뜸을 들인다.",
-          "5. 잘 섞어 그릇에 담는다."
+          "1. 냄비에 채소를 볶고 쌀을 넣어 볶는다.",
+          "2. 간장, 맛술, 물을 붓고 치킨을 올린다.",
+          "3. 뚜껑을 덮어 중약불에서 15분, 뜸 들이기 10분."
         ],
-        topic_en: "Flavorful rice pot dish with leftover chicken",
-        ingredients_en: "Leftover chicken, rice, soy sauce, mirin, carrot, onion, green onion",
+        topic_en: "Savory Chicken Rice Pot with Leftovers",
+        ingredients_en: "Chicken, soaked rice, soy sauce, mirin, vegetables, water",
         steps_en: [
-          "1. Rinse rice and soak in water.",
-          "2. Sauté vegetables in a pot.",
-          "3. Add rice, seasonings, and water, bring to boil.",
-          "4. Place chicken on top, steam.",
-          "5. Mix and serve."
+          "1. Sauté vegetables in a pot, add rice and stir.",
+          "2. Pour soy sauce, mirin, water, and top with chicken.",
+          "3. Cover and cook on medium-low for 15 min, steam for 10 min."
         ],
-        reference: "Homemade recipe"
+        reference: "https://www.10000recipe.com/recipe/6867197"
       }
     };
 
