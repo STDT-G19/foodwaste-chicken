@@ -5,6 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FOODWASTE - 치킨</title>
   <link href="style.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .subtitle {
+      margin-bottom: 20px;
+    }
+    .ingredient-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .ingredient {
+      width: 150px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 10px;
+      transition: border 0.3s;
+    }
+    .ingredient.selected {
+      border: 2px solid #f39c12;
+    }
+    .ingredient img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .next-btn {
+      margin-top: 30px;
+      padding: 10px 30px;
+      font-size: 16px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 5px;
+      cursor: not-allowed;
+      transition: background-color 0.3s;
+    }
+    .next-btn.active {
+      background-color: #f39c12;
+      color: white;
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
   <h1>FOODWASTE - 치킨</h1>
