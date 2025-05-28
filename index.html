@@ -8,26 +8,26 @@
 </head>
 <body>
   <h1>FOODWASTE - 치킨</h1>
-  <p class="subtitle">냉장고 속 남은 재료를 골라 새로운 치킨 요리로 바꿔보세요! (하나만 선택)</p>
+  <p class="subtitle">남은 재료를 골라 새로운 치킨 요리로 바꿔보세요! (하나만 선택)</p>
 
   <div class="ingredient-container">
-    <div class="ingredient" data-name="lettuce" onclick="selectIngredient(this)">
+    <div class="ingredient" data-name="양상추" onclick="selectIngredient(this)">
       <img src="food_picture/lettuce.jpg" alt="양상추">
       <span>양상추</span>
     </div>
-    <div class="ingredient" data-name="tortilla" onclick="selectIngredient(this)">
+    <div class="ingredient" data-name="또띠아" onclick="selectIngredient(this)">
       <img src="food_picture/tortilla.jpg" alt="또띠아">
       <span>또띠아</span>
     </div>
-    <div class="ingredient" data-name="soup" onclick="selectIngredient(this)">
+    <div class="ingredient" data-name="수프" onclick="selectIngredient(this)">
       <img src="food_picture/soup.jpg" alt="수프">
       <span>수프</span>
     </div>
-    <div class="ingredient" data-name="batter" onclick="selectIngredient(this)">
-      <img src="food_picture/batter.jpg" alt="튀김가루">
+    <div class="ingredient" data-name="튀김가루" onclick="selectIngredient(this)">
+      <img src="food_picture/frymix.jpg" alt="튀김가루">
       <span>튀김가루</span>
     </div>
-    <div class="ingredient" data-name="rice" onclick="selectIngredient(this)">
+    <div class="ingredient" data-name="밥" onclick="selectIngredient(this)">
       <img src="food_picture/rice.jpg" alt="밥">
       <span>밥</span>
     </div>
@@ -50,7 +50,7 @@
     function goToNextPage() {
       if (!selectedIngredient) return;
       localStorage.setItem('selectedIngredient', selectedIngredient);
-      window.location.href = 'next_chicken.html';
+      window.location.href = 'next.html';
     }
   </script>
 </body>
